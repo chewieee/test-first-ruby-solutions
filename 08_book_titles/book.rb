@@ -2,9 +2,11 @@
 
 class Book
   # Setter method for title
+
   def title=(title)
     @title = title
   end
+  # or attr_writer :title
 
   def title
     words = @title.split(' ').map do |word|

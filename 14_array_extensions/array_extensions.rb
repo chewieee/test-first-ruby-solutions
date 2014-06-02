@@ -1,19 +1,23 @@
 #_14_array_extensions
 
 class Array
+
   def sum
     result = 0
-    self.each do |num|
-      result += num
+    if self.empty?
+      0
+    else
+      self.each {|num| result += num}
     end
     result
   end
 
-  def square
-    map{|n| n*n}
+  def square(array=[])
+    if array.empty?
+      self
+    else
+      array.map{|x| x * x}
+    end
   end
 
-  def square!
-    map!{|n| n*n}
-  end
 end

@@ -1,5 +1,5 @@
 # 09 timer
-=begin
+
 class Timer
 	# Creates reader/writer methods for seconds variable
 	attr_accessor :seconds
@@ -24,7 +24,7 @@ class Timer
 	end
 
 end
-=end
+
 
 
 
