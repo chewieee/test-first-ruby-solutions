@@ -1,47 +1,46 @@
 # 04_pig_latin
 
-# Module is used to wrap methods to allow 
-# communication within scope
-module PigLats
+module PigLatin
 
-# Method which puts words into and array, pig_latinifies them, and
-# converts back to string
-def translate(s)
-	s.split.map {|word| word.pig_latinify(word)}.join(' ')
-end
+	def pig_latinify(word)
+		vowels = ['a', 'e', 'i', 'o', 'u']
+		# Creates consonants array by subtracting vowels from a-z range
+		consonants = ('a'..'z').to_a - vowels
+		
+		if vowels.include?(word[0])
+				word + 'ay'
 
+		elsif word[0..2] == "squ"
+				word[3..-1] + word[0..2] + 'ay'
 
-def pig_latinify(s)
-	vowels = %w{a e i o u}
-	# Gives an array of only consonants
-	consonants = ('a'..'z').to_a - vowels
+		elsif word[0..1] == "qu"
+				word[2..-1] + word[0..1] + 'ay'
 
-	if vowels.include?(s[0])
-		s + 'ay'
+		elsif consonants.include?(word[0]) && 
+		  	  consonants.include?(word[1]) &&
+		  	  consonants.include?(word[2])
+		  		word[3..-1] + word[0..2] + 'ay'
+			
+		elsif consonants.include?(word[0]) && 
+		  	  consonants.include?(word[1])
+		  		word[2..-1] + word[0..1] + 'ay'
 
-	elsif consonants.include?(s[0]) && s[1..2] == 'qu'
-		s[3..-1] + s[0..2] + 'ay'
+		elsif consonants.include?(word[0])
+			  	word[1..-1] + word[0] + 'ay'
 
-	elsif s[0..1] == 'qu'
-		s[2..-1] + s[0..1] + 'ay'
-
-	elsif consonants.include?(s[0]) &&  
-		  consonants.include?(s[1]) && 
-		  consonants.include?(s[2])
-			s[3..-1] + s[0..2] + 'ay'
-
-	elsif consonants.include?(s[0]) && 
-		  consonants.include?(s[1])
-			s[2..-1] + s[0..1] + 'ay'
-
-	elsif consonants.include?(s[0])
-		s[1..-1] + s[0] + 'ay'
-
-	else
-		s
+		else
+			word
+		end
 	end
 end
-	
-end 
+# Brings PigLatin into environment scope
+include PigLatin
 
-include PigLats
+# Translate method is not specific to Pig Latin, can be open to 
+# other language modules 
+
+def translate(phrase)
+	phrase.split.map {|word| word.pig_latinify(word)}.join(' ')
+end
+
+

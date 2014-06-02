@@ -1,5 +1,8 @@
 # 10_temeperature_object
 
+# One of the topics is Factory Method Design. I understand the 
+# concept to an extent but implementing based on TDD/rspec file is tough.
+
 class Temperature
 
   def initialize(opts = {})
