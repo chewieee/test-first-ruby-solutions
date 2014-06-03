@@ -12,12 +12,12 @@ class Array
     result
   end
 
-  def square(array=[])
-    if array.empty?
-      self
-    else
-      array.map{|x| x * x}
-    end
+  def square
+    map { |num| num * num }
+  end
+
+  def square!
+    map! { |num| num * num }
   end
 
 end

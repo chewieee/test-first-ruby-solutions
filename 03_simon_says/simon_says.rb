@@ -25,7 +25,7 @@ def first_word(phrase)
 	phrase.scan(/\w+/)[0]
 end
 
-# Bit of a headache, but capitalizes all words except "little words" 
+# PHEW! Capitalizes all words except "little words" 
 # specified in the no_caps array. Added 'over' to no_caps array
 # so it would pass but maybe I'm sure there's a better way to filter?
 def titleize(title)
