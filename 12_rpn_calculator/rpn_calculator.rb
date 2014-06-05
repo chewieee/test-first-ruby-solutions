@@ -3,6 +3,7 @@
 class RPNCalculator
 
 	def value
+		# Will always give you last value in the "stack"
 		@operands[-1]
 	end 
 
@@ -52,8 +53,6 @@ class RPNCalculator
 
 			case x
 
-			
-
 			when :*
 				times
 
@@ -73,7 +72,4 @@ class RPNCalculator
 		value		
 	end
 
-end
-
-
-# Test Area 
+end 

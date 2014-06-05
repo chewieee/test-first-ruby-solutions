@@ -16,7 +16,7 @@ def repeat(what, num=2)
 end
 
 # Grabs the first index of a string if no range specified
-def start_of_word(word, pos)
+def start_of_word(word, pos=1)
 	word[0...pos]	
 end
 
