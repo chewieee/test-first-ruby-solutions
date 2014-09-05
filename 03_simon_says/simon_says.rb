@@ -1,4 +1,4 @@
-# Simon Says
+# 03. Simon Says
 
 def echo(arg)
 	arg
@@ -8,12 +8,12 @@ def shout(arg)
 	arg.upcase
 end
 
-def repeat(arg, num=2)
-	num.times.collect{arg}.join(' ')
+def repeat(word, num=2)
+	num.times.collect{word}.join(' ')
 end
 
-def start_of_word(arg, num)
-	arg[0...num]
+def start_of_word(word, pos)
+	word[0...pos]
 end
 
 def first_word(arg)
@@ -21,13 +21,9 @@ def first_word(arg)
 end
 
 def titleize(arg)
-	words = arg.split(' ').map do |word| 
+	words = arg.split(' ').map do |word|
 		little_words = %w{and over the}
-		if little_words.include?(word)
-			word
-		else
-			word.capitalize
-		end
+		little_words.include?(word) ? word : word.capitalize
 	end
 	words[0].capitalize!
 	words.join(' ')

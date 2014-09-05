@@ -1,8 +1,8 @@
-# Silly Blocks
+# 05. Silly Blocks
 
 def reverser
 	yield.split(' ').map(&:reverse).join(' ')
-end
+end	
 
 def adder(arg=1)
 	yield + arg

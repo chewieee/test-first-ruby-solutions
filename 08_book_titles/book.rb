@@ -1,4 +1,4 @@
-# Book Titles
+# 08. Book Titles
 
 class Book
 
@@ -6,12 +6,8 @@ class Book
 
 	def title
 		words = @title.split(' ').map do |word|
-			no_caps = %w{and in the of a an}
-			if no_caps.include?(word)
-				word
-			else
-				word.capitalize
-			end
+			little_words = %w{and in the of a an}
+			little_words.include?(word) ? word : word.capitalize
 		end
 		words[0].capitalize!
 		words.join(' ')

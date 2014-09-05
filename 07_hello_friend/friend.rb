@@ -1,13 +1,12 @@
-# Hello Friend
+# 07. Hello Friend
 
 class Friend
 
 	def greeting(arg=nil)
-		if arg
-			"Hello, #{arg}!"
-		else
+		if arg.nil?
 			"Hello!"
+		else
+			"Hello, #{arg}!"
 		end
 	end
 end
-

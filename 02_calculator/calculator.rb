@@ -1,31 +1,28 @@
-# 02 Calculator
+# 02. Calculator
 
-def add(x, y)
-	x + y
+def add(a, b)
+	a + b
 end
 
-def subtract(x, y)
-	x - y
+def subtract(a, b)
+	a - b
 end
 
-def sum (args=[])
-	sum = 0
-	args.each {|num| sum += num}
-	sum
+def sum(arg)	
+	return 0 if arg.empty?
+	arg.inject {|memo, x| memo += x}
 end
 
-def multiply(args)
-	args.inject {|memo, num| memo *= num}
+def multiply(arg)
+	arg.inject {|memo, x| memo *= x}
 end
 
-def power(b, e)
-	b ** e
+def power(base, exp)
+	base ** exp
 end
 
 def factorial(arg)
 	result = 1
-	(1..arg).each do |num|
-		result *= num
-		end
-	result 
+	(1..arg).each {|num| result *= num}
+	result
 end

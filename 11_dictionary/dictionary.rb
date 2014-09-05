@@ -1,36 +1,38 @@
-# Dictionary
+# 11. Dictionary
 
 class Dictionary
 
-	def initialize 
-		@entries = {}
-	end
-	
 	attr_reader :entries
 
-	def add(arg)
-		if arg.class == String
-			@entries[arg] = nil
+	def initialize
+		@entries = {}
+	end
+
+	def add(entry)
+		if entry.class == String
+			@entries[entry] = nil
 		else
-			@entries = entries.merge(arg)
+			@entries = @entries.merge(entry)
 		end
+
 	end
 
 	def keywords
-		entries.keys.sort
+		@entries.keys.sort
 	end
 
-	def include?(arg)
-		@entries.has_key?(arg)
+	def include?(word)
+		@entries.has_key?(word)
 	end
 
-	def find(arg)
-		@entries.select {|k, v| k.start_with?(arg)}
+	def find(prefix)
+		@entries.select {|key, value| key.start_with?(prefix)}
 	end
 
 	def printable
-		@entries.sort.map do |k, v|
-			"[#{k}] \"#{v}\""
+		@entries.sort.map do |key, value|
+			"[#{key}] \"#{value}\""
 		end.join("\n")
 	end
+
 end

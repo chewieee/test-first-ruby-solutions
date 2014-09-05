@@ -1,11 +1,11 @@
-# 01_temperature
+# 01. Temperature
 
 # Converts Fahrenheit to Celsius
 def ftoc(temp)
-	(temp - 32) * 5/9.to_f
+	(temp - 32) * 5/9.0
 end
 
 # Converts Celsius to Fahrenheit
 def ctof(temp)
-	(temp * 9/5.to_f) + 32
+	(temp * 9/5.0) + 32
 end

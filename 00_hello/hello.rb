@@ -1,12 +1,9 @@
-# 00_hello
+# 00. Hello
 
-
-# Simply returns the string "Hello!"
 def hello
 	"Hello!"
 end
 
-# Takes a name as an argument
-def greet(name)
-   "Hello, #{name}!"
+def greet(arg)
+	"Hello, #{arg}!"
 end

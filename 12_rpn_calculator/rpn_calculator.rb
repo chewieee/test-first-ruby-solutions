@@ -1,4 +1,4 @@
-# Russian Polish Notation Calculator
+# 12. Russian Polish Notation Calculator
 
 class RPNCalculator
 
@@ -37,7 +37,7 @@ class RPNCalculator
 	end
 
 	def pop
-		raise "calcuulator is empty" if @array.empty?
+		raise "calculator is empty" if @array.empty?
 		@array.pop
 	end
 
